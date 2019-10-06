@@ -1,0 +1,46 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-admin-sidebar></app-admin-sidebar> 
+      </div>
+    </div> 
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <app-admin-searchbar></app-admin-searchbar>
+      </div>
+      <div id="content">
+        <h2>Transaction Update</h2>
+        <div class="row" *ngFor="let user of allUsers">
+           <div class="col-8">
+               <ul> 
+                 <li>
+                   <a>Seeker Name: {{user.frm.firstName}} {{user.frm.lastName}}</a><br>
+                    <a>Provider Name:{{user.to.firstName}} {{user.to.lastName}}</a>
+                    <ul>
+                        <li>Transaction No: {{user.transactionId}}</li>
+                        <li>Service Duration: {{user.serviceId.cerateDate | date:'dd/MM/yyyy'}} - {{user.serviceId.endDate| date:'dd/MM/yyyy'}}</li>
+                        <li>Transaction amount: {{user.totalAmount}}/=</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+          <div class="col-2">
+            <button class="btn-pro" (click)="approveTrans(user.id)">Approved</button>
+          </div>
+        </div>      
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul>
+  <li *ngFor="let user of users$">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    <ul>
+      <li>{{ user.email }}</li>
+      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+    </ul>
+  </li>
+</ul> -->

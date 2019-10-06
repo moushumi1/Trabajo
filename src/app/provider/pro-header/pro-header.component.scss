@@ -1,0 +1,23 @@
+
+.bg-clr{
+    background-color: #F6511D;
+  }
+  
+  a{
+    color: white;
+  }
+  .drpclr{
+    color: rgb(82, 59, 59);
+  }
+  
+  .drpclr:hover{
+    color: black;
+  }
+  
+  img{
+    transform: translateX(-50%);
+    top: 0%;
+    left: 50%;
+    position: absolute;
+    width: 100px; 
+  }

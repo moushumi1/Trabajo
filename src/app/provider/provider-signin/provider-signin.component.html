@@ -1,0 +1,134 @@
+<app-nav-bar></app-nav-bar>
+<form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
+  <div class="row">
+      <div class="col-md-7 col-lg-7 col-sm-12 col-xm-12">
+          <img class="logo" src="./assets/img/logo.png" alt="" width="50%" height="26%">
+        <div class="col-md-12 textDiv">
+          <h1>Learn to <font color="#F6511D">enjoy</font> every minute of your <font color="#F6511D">life</font>.</h1>
+      </div>
+      </div>
+    <div class="col-md-5 col-lg-5 col-sm-12 col-xm-12 rgt">
+      <div class="row div1">
+        <div class="col-12">
+          <h3>Provider Sign In</h3>
+        </div>
+      </div>
+      <div class="div2">
+        <div class="container form" style="padding-top:20px;">
+
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+            <label><br>E-Mail:</label>
+          </div>
+          <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+            <input type="text" class="form-control txtbx" placeholder="Enter Your Email Address" formControlName="email">
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- <div class="col-3"></div> -->
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+          <div *ngIf="signInForm.get('email').errors && (signInForm.get('email').dirty || signInForm.get('email').touched)|| signInForm.get('email').pristine" >
+
+            <div *ngIf="(signInForm.get('email').errors.required && signInForm.get('email').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                e-mail is required.
+            </div>
+            <div *ngIf="signInForm.get('email').errors?.pattern"  class="alert alert-danger">
+                incorrect format of e-mail.
+            </div>
+
+          </div>
+        </div>
+      </div>
+        
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>Password:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="password" class="form-control txtbx" placeholder="Enter Your password" formControlName="password">
+            </div>
+          </div><br>
+
+          <div *ngIf="signInForm.get('password').errors && (signInForm.get('password').dirty || signInForm.get('password').touched)|| signInForm.get('password').pristine"  >
+                    
+            <div *ngIf="signInForm.get('password').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+              Password is required.
+          </div>
+            <div *ngIf="signInForm.get('password').errors?.minlength " class="alert alert-danger" >
+              Password must be greater than 5 letters.
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <div class="checkbox">
+                <label><input type="checkbox" value="">  remember me.</label>
+              
+              <label style="float:right;"><a href="#">Forgot Password?</a></label>
+            </div>
+            </div>
+
+          </div><br>
+        
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <br><button type="submit" class="btn btn-info"><img src="./assets/img/sign.png" height="8%" width="8%">  Sign in</button>
+            </div>
+          </div><br>
+
+        <div class="row" class="col-md-12 col-lg-12 col-sm-12 col-xm-12"> 
+            
+          <div *ngIf="exist"  class="alert alert-danger">
+              email or password is incorrect.
+          </div>
+          
+        </div>
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br></label>
+              </div><div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                  <label style="text-align: left;"><br>Sign In with:</label>
+                </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br></label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <br><button type="button" class="btn btn-primary"><img src="./assets/img/fb.png" height="8%" width="8%">  Facebook</button>
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br></label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <br><button type="button" class="btn btn-danger"><img src="./assets/img/gmail.png" height="8%" width="8%">  Google</button>
+              </div>
+            </div>
+        
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br></label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <label><br>Not Registered Yet? <a routerLink="/signup">get registered.</a></label>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</form>

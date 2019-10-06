@@ -1,0 +1,22 @@
+.list-group-item-clr{
+    background-color: #17a0b6;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.list-group-item-clr:hover{opacity: 1}
+
+a{
+    color: white;
+    font-size: .90rem;
+    // letter-spacing: 0.15rem;
+    // text-transform: uppercase;
+}
+
+a:hover{
+    color: black;
+}
+
+svg{
+    padding-right: 5px;
+}

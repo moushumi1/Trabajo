@@ -1,0 +1,77 @@
+<app-seeker-header></app-seeker-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-seeker-sidebar></app-seeker-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"><br>
+            <span class="label rounded-left" style="padding:15px;">Booking process</span>
+          </div>
+          <div class="col-md-6 btn"><br>
+            <button class="btn-pro" style="padding:15px;" (click)="bookProvider()">Book Provider</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <div class="chatbox">
+              <div class="chatlogs" >
+                <div *ngFor="let message of profile; let i = index">
+                <div class="chat self" *ngIf="userInfo.id==message.frm ||userInfo.id==message.frm.id; else other_content" >
+                  <div class="user-photo"><img src="assets/img/demo.jpg"></div>
+                  <p class="chat-message">{{message.messageText}}</p>
+                </div>
+                <ng-template #other_content>
+                  <div class="chat friend">
+                  <div class="user-photo"><img src="assets/img/demo.jpg"></div>
+                  <p class="chat-message">{{message.messageText}}</p>
+                  </div>
+                </ng-template>
+
+                <!-- <div class="chat friend" *ngIf="userInfo.id!=message.frm ||userInfo.id!=message.frm.id">
+                    <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                    <p class="chat-message">{{message.messageText}}</p>
+                </div> -->
+              </div>
+
+                <!-- <div class="chat friend">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">A paragraph (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.[1] Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                </div>
+                <div class="chat self">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">A paragraph (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.[1] Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                </div>
+                <div class="chat friend">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">Whats up....Brother!!!!</p>
+                </div>
+                <div class="chat self">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">Whats up....</p>
+                </div>
+                <div class="chat friend">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">A paragraph (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.[1] Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                </div>
+                <div class="chat self">
+                  <div class="user-photo"><img src="assets/img/2.JPG"></div>
+                  <p class="chat-message">A paragraph (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.[1] Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.</p>
+                </div> -->
+              </div>
+                    
+              <div class="chat-form">
+                <textarea #userInput type="text"></textarea>
+                <button class="chatbutton" (click)="sentMessage(userInput.value)">send</button>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

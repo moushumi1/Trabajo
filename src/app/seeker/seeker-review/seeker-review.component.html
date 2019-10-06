@@ -1,0 +1,51 @@
+<app-seeker-header></app-seeker-header>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+            <div class="sticky-top">
+                <app-seeker-sidebar></app-seeker-sidebar> 
+            </div>
+        </div>
+        <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+            <div class="container">
+              <form [formGroup]="reviewForm" (ngSubmit)=" reviewSubmit()">
+              <h1>Leave a review to your provider</h1><br>
+              <h3>Rate your provider:</h3><br>
+              <div class="row" style="padding-left:80px">
+                <div class="col-6">
+                  <h5>Rate you provider:</h5>
+                  <h6>(Based on Communication, Punctuality, Preparation, Clarity, Energy)</h6>
+                </div>
+                <div class="col-6">
+                  <div class="rating">
+                    <input type="radio"  id="star1" formControlName="rating" [value]=5 >
+                    <label for="star1"></label>
+                  
+                    <input type="radio"  id="star2" formControlName="rating" [value]=4>
+                    <label for="star2"></label>
+                  
+                    <input type="radio"  id="star3" formControlName="rating" [value]=3>
+                    <label for="star3"></label>
+                  
+                    <input type="radio"  id="star4" formControlName="rating" [value]=2>
+                    <label for="star4"></label>
+                  
+                    <input type="radio"  id="star5" formControlName="rating" [value]=1>
+                    <label for="star5"></label>
+                  </div>
+                </div>
+              </div><br>
+
+
+              <!-- Communication Punctuality Preparation Clarity Energy -->
+              
+              <h3>Leave a comment:</h3>
+              <div class="chat-form">
+                <textarea type="text" formControlName="review"></textarea>
+                <button type="submit" class="chatbutton">Submit</button>
+              </div>
+              </form>
+            </div><br>
+        </div>
+    </div>
+</div>

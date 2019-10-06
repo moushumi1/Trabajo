@@ -1,0 +1,105 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-admin-sidebar></app-admin-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div class="row">
+        <div class="col-12" style="padding:0px;">
+          <div class="tranbox" id="tran">
+            <h4>Transaction Details</h4>
+            <div class="tranlogs">
+              <table id="trantable">
+                <tr>
+                  <th>Provider</th>
+                    <th>Seeker</th>
+                    <th>Service Duration</th>
+                    <th>Amount</th>
+                    <th>Provider Amount</th>
+                    <th>Profit</th>
+                  </tr>
+                  <tr *ngFor="let user of allUsers">
+                    <td>{{user.frm.firstName}} {{user.frm.lastName}}</td>
+                    <td>{{user.to.firstName}} {{user.to.lastName}}</td>
+                    <td>{{user.serviceId.cerateDate | date:'dd/MM/yyyy'}} - {{user.serviceId.endDate| date:'dd/MM/yyyy'}}</td>
+                    <td>{{user.totalAmount}}</td>
+                    <td>{{user.lessTenPer}}</td>
+                    <td>{{user.profit}}</td>
+                  </tr>
+                </table>
+              </div><br>
+              <div class="row">
+                <div class="col-6"><button class="btn-pro" routerLink="">Refresh</button></div>
+                <div class="col-6 text-right"><button class="btn-pro text-right" (click)="onClick()">Print</button></div>
+              </div>
+            </div>
+          </div><br>
+          <div class="row">
+              <div class="col-12" style="padding:0px;">
+                  <div class="graphbox">
+                    <h4>Transaction Graph</h4>
+                    <div class="graphlogs">
+      
+                    <form class="form-inline" action="">
+                      <div class="input-group" style="padding-right:8px;">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Year" size="5">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item">2016</a>
+                            <a class="dropdown-item">2017</a>
+                            <a class="dropdown-item">2018</a>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="input-group" style="padding-right:8px;">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Month" size="6">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                          <div class="dropdown-menu">
+                            <a class="dropdown-item">January</a>
+                            <a class="dropdown-item">February</a>
+                            <a class="dropdown-item">March</a>
+                            <a class="dropdown-item">April</a>
+                            <a class="dropdown-item">May</a>
+                            <a class="dropdown-item">June</a>
+                            <a class="dropdown-item">July</a>
+                            <a class="dropdown-item">August</a>
+                            <a class="dropdown-item">September</a>
+                            <a class="dropdown-item">October</a>
+                            <a class="dropdown-item">NovemberDecember</a>
+                            <a class="dropdown-item">December</a>
+                          </div>
+                        </div>
+                      </div>
+      
+                      <div class="input-group ml-auto" style="padding-right:8px;">
+                        <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Graph Type" size="10">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item">Transaction</a>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <a class="dropdown-item">Profit</a>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+      
+                      <div style="padding-top:80px;">
+                          <img src="assets/img/graph.png" width="100%" height="100%">
+                      </div>
+      
+                    </div>
+                  </div>
+                </div>
+          </div>
+
+        </div>
+    </div>
+  </div>
+</div>

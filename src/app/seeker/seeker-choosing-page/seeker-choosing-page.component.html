@@ -1,0 +1,269 @@
+<app-seeker-header></app-seeker-header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-seeker-sidebar></app-seeker-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6" ><br> 
+            <!-- *ngIf="profile | async; else loading" -->
+            <span class="label rounded-left" style="padding:15px;">Profile of  {{profile.firstName}}</span>
+          </div>
+          <!-- <ng-template #loading>
+            Loading User...
+          </ng-template> -->
+        </div><br>
+        <div class="row">
+          <div class="col-md-2 proImg">
+            <img src="assets/img/demo.jpg" width="100%" height="70%"><br><br>
+            <div class="row">
+              <div class="col-12">
+                <h5>{{profile.firstName}} {{profile.lastName}}</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 basic_info">
+            <h4>Basic Information:</h4><hr>
+            <div class="row">
+              <div class="col-md-5">
+                <p>Age:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{profile.dob | date:'dd/MM/yyyy'}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+                <p>Gender:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{profile.gender}}</p>
+              </div>
+            </div>
+                
+            <div class="row">
+              <div class="col-md-5">
+                <p>Price Rate:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{profile.priceRate}}/= (per hour)</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ml-auto">
+            <button class="btn-pro" (click)="chooseProvider()">Choose Provider</button>
+            
+           
+             
+          </div>
+          <div class="col-md-2">
+            <!-- blank -->
+          </div>
+        </div>
+
+
+        <div class="row" style="padding-top:20px; padding-left:25px;">
+            <div class="col-2"></div>
+            <div class="col-md-8 prof">
+              <h4>Profession and Interest:</h4><hr>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Profession:</p>
+                </div>
+                <div class="col-md-6">
+                  {{profile.profession}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Interest:</p>
+                </div>
+                <div class="col-md-6">
+                  <p>{{profile.interest}}</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+                <!-- blank -->
+            </div>
+          </div>
+
+
+
+
+        <div class="row" style="padding-left:25px;">
+          <div class="col-2"></div>
+          <div class="col-md-8 add">
+            <h4>Additional Information:</h4><hr>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Experience:</p>
+              </div>
+              <div class="col-md-6">
+                <p>5+ years job experience</p>
+                <p>{{profile.interest}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Rating:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{profile.rating}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <p>City:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{profile.city}}</p>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-4">
+                <p>Country:</p>
+              </div>
+              <div class="col-md-6">
+                <p>Bangladesh</p>
+              </div>
+            </div> -->
+          </div>
+          <div class="col-md-2">
+            <!-- blank -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row div1">
+  <div class="col-12">
+    <h1>Your Profile</h1>
+  </div>
+</div>
+
+<div class="div2">
+  <div class="container form" style="padding-top:20px;">
+    
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>First Name:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Saika</p>
+      </div>
+    </div>
+              
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Last Name:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Shahnaj</p>
+      </div>
+    </div>
+              
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>E-Mail:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>shahnajsaika@gmail.com</p>
+      </div>
+    </div>
+              
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Password:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Pass@123</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Gender:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Female</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Contact No:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>+880 1683 115419</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Date of Birth:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>18 / 12 / 1996</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Address:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Dhaka Cantonment</p>
+      </div>
+    </div>
+                  
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Country:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Bangladesh</p>
+      </div>
+    </div>
+              
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>City:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>Dhaka</p>
+      </div>
+    </div>
+              
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>Zip Code:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+          <p>1206</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+        <label>SSN/Passport No:</label>
+      </div>
+      <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+        <p>BW0923965</p>
+      </div>
+    </div>
+    
+  </div>
+</div> -->
+
+
+

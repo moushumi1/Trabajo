@@ -1,0 +1,96 @@
+<app-seeker-header></app-seeker-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-seeker-sidebar></app-seeker-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+      <div class="container">
+        <div class="row"> 
+
+          <div class="col-6">
+            <h1>Booking Information</h1>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6">Provider Name:</div>
+                <div class="col-5">{{profile.firstName}} {{profile.lastName}}</div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">Provider Profession:</div>
+                <div class="col-5">{{profile.profession}}</div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">Provider Price Rate:</div>
+                <div class="col-5">{{profile.priceRate}}/= (per hour)</div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">Booking Hour:</div>
+                <div class="col-5"><input  (keyup)="update($event)" type="number" class="txtbx" placeholder="Enter hour" formControlName="hour"></div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">From Date:</div>
+                <div class="col-5"><input type="date" class="date" formControlName="cerateDate"></div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">To Date:</div>
+                <div class="col-5"><input type="date" class="date" formControlName="endDate"></div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">Net bill:</div>
+                <div class="col-5"><input type="number" class="txtbx" formControlName="totalAmount" readonly></div>
+                /=</div><br>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <h1>Billing Confirmation</h1>
+            <div class="container-fluid">
+              <p>(Complete billing process through bKash payment)</p><br>
+              <div class="row">
+                <div class="col-6">BKash Number:</div>
+                <div class="col-5">+880 1683 000000</div>
+              </div><br>
+              <div class="row">
+                <div class="col-6">Billing Contact Number:</div>
+                <div class="col-6"><input type="text" class="txtbx" placeholder="Enter your Number"  formControlName="transactionConNo"></div>
+              </div><br>
+              <div class="row">
+                  <!-- <div class="col-3"></div> -->
+                  <div class="col-12">
+        
+        
+        
+                  <div *ngIf="transactionForm.get('transactionConNo').errors && (transactionForm.get('transactionConNo').dirty || transactionForm.get('transactionConNo').touched || transactionForm.get('transactionConNo').pristine)" >
+        
+                    <div *ngIf="(transactionForm.get('transactionConNo').errors?.required  && transactionForm.get('transactionConNo').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                      Contact is required.
+                    </div> 
+                     <!-- <div *ngIf="transactionForm.get('contact').errors?.minlength "class="alert alert-danger"  >
+                      The length of the contact is incorrect.
+                    </div> -->
+                    <div *ngIf="transactionForm.get('transactionConNo').errors?.pattern "class="alert alert-danger"  >
+                        Contact format is not correct.
+                    </div> 
+        
+                  </div>
+                </div>
+              </div>
+            </div><br>
+              <div class="row">
+                <div class="col-6">Transaction Id:</div>
+                <div class="col-6"><input type="text" class="txtbx" placeholder="Enter Transaction Id" formControlName="transactionId"></div>
+              </div><br>
+            </div>
+          </div>
+
+        </div><br><br>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+      </div>
+    <!--  -->
+    </div>
+  </div>

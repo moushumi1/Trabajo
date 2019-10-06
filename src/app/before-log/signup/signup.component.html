@@ -1,0 +1,384 @@
+<app-nav-bar></app-nav-bar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-7 col-lg-7 col-sm-12 col-xm-12">
+      <div>
+        <img class="logo" src="./assets/img/logo.png" alt="" width="50%" height="50%">
+        <div class="container-fluid text-justify term">
+          <br><h3 class="font-weight-bold"><u>Terms and Conditions</u></h3> <br>
+          <dl class="term1">
+            <dt>As a Service Provider</dt>
+            <dd>- you have to create an account as well as listing your skill sets.</dd>
+            <dd>- you have to mention your level of expertise.</dd>
+            <dd>- you have to prove your experience and qualifications.</dd>
+            <dd>- your account and profile will go through a thorough verification process.</dd>
+            <dd>- you get to name your hourly rate as you see fit. </dd>
+            <dd>- The market rates and demand will play a big role, specially if you want to maximize your bookings but in general one is free to put the rate that they see fit and might be worth their time.</dd>
+            <dd>- Reviews are the other major piece that will come in play eventually to build credibility and higher demand/booking rate.</dd>
+            <dd>- 1 hour Class cost: flat fee of $25+10%platform fee.</dd>
+            <dd>- In case advanced lessons are required, and other expenses are required by customer – a different hourly rate could be agreed upon using our messaging communication platform. </dd>
+            <dd>- All payments go through our system, no cash, checks, or any other payments outside the app. </dd>
+            <dd>- After each lesson, users and customers rate each other with a review.</dd>
+            <dd>-	Rating for users by customers consists of 5 criteria: communication, punctuality, preparation, clarity & energy.</dd><br><br>
+            <dt>As a Service Seeker</dt>
+            <dd>- you have to create an account with basic profile information which will further going through a standard verification process as well.</dd>
+            <dd>- you will be able to access the platform to search for service providers in their area with capabilities or filtering out the results based on your demands and criteria.</dd>
+            <dd>- All payments go through our system, no cash, checks, or any other payments outside the app. </dd>
+            <dd>- After each lesson, users and customers rate each other with a review.</dd>
+            <dd>-	Rating for users by customers consists of 5 criteria: communication, punctuality, preparation, clarity & energy.</dd>
+          </dl>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 col-lg-5 col-sm-12 col-xm-12 rgt">
+      <div class="row div1">
+        <div class="col-12">
+          <h1>Sign Up</h1>
+        </div>
+      </div>
+      <div class="div2">
+        <div class="container form" style="padding-top:20px;">
+
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+          <div class="row" formGroupName="role">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label>User Type: </label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+
+              <div class="form-check">
+                <input type="radio"  name="id" formControlName="id" [value]=3>
+                <label class="form-check-label" for="materialChecked">Service Seeker</label>
+              </div>
+
+              <div class="form-check">
+                <input type="radio"  name="id" formControlName="id" [value]=2 checked>
+                <label class="form-check-label" for="materialChecked">Service Provider</label>
+              </div>
+              
+            </div>
+          </div><br>
+
+<!-- //signup -->
+
+<!-- <form [formGroup]="profileForm" (ngSubmit)="onSubmit()"> -->
+
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>First Name:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx ng-invalid ng-valid.required" placeholder="Enter Your First Name" formControlName="firstName">
+            </div>
+
+            <div class="row">
+              <!-- <div class="col-3"></div> -->
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+              <div *ngIf="profileForm.get('firstName').errors && (profileForm.get('firstName').dirty || profileForm.get('firstName').touched)|| profileForm.get('firstName').pristine">
+  
+                <div *ngIf="profileForm.get('firstName').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                  First Name is required.
+                </div>
+                <div *ngIf="profileForm.get('firstName').errors?.minlength " class="alert alert-danger" >
+                    firstName must be at least 3 characters long.
+                </div>
+                <div *ngIf="profileForm.get('firstName').errors?.pattern " class="alert alert-danger" >
+                    Cannot contain numbers and symbols.
+                </div>
+  
+              </div>
+            </div>
+          </div>
+
+
+          </div>
+          
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>Last Name:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx" placeholder="Enter Your Last Name" formControlName="lastName">
+            </div>
+
+            <div class="row">
+                <!-- <div class="col-3"></div> -->
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+  
+  
+  
+                <div *ngIf="profileForm.get('lastName').errors && (profileForm.get('lastName').dirty || profileForm.get('lastName').touched || profileForm.get('lastName').pristine)" >
+    
+                  <div *ngIf="profileForm.get('lastName').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                      Last Name is required.
+                  </div>
+                  <div *ngIf="profileForm.get('lastName').errors?.minlength "class="alert alert-danger" class="alert alert-danger" >
+                      lastName must be at least 3 characters long.
+                  </div>
+                  <div *ngIf="profileForm.get('lastName').errors?.pattern "class="alert alert-danger"  class="alert alert-danger">
+                      Cannot contain numbers and symbols.
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>E-Mail:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx" placeholder="Enter Your Email Address" formControlName="email">
+            </div>
+
+            <div class="row">
+                <!-- <div class="col-3"></div> -->
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+  
+  
+  
+                <div *ngIf="profileForm.get('email').errors && (profileForm.get('email').dirty || profileForm.get('email').touched)|| profileForm.get('email').pristine" >
+    
+                  <div *ngIf="profileForm.get('email').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                      e-mail is required.
+                  </div>
+                  <div *ngIf="profileForm.get('email').errors?.pattern"  class="alert alert-danger">
+                      incorrect format of e-mail.
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="cross-validation" [class.cross-validation-error]="profileForm.errors?.missMatch && (profileForm.touched || profileForm.dirty)">
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>Password:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="Password" class="form-control txtbx" placeholder="Atleast 5 characters" formControlName="password">
+            </div>
+            <div *ngIf="profileForm.get('password').errors && (profileForm.get('password').dirty || profileForm.get('password').touched)|| profileForm.get('password').pristine"  >
+                
+                <div *ngIf="profileForm.get('password').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                  Password is required.
+              </div>
+                <div *ngIf="profileForm.get('password').errors?.minlength " class="alert alert-danger" >
+                  Password must be greater than 5 letters.
+                </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label>Confirm Password:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="Password" class="form-control txtbx" placeholder="Retype Your Password" formControlName="passwordRe">
+            </div>
+
+            <!-- <div *ngIf="profileForm.get('passwordRe').touched" class="alert alert-danger alter-ego-errors"> -->
+                <!-- <div *ngIf="profileForm.errors?.missMatch"> -->
+                  <!-- Input password -->
+                <!-- </div> -->
+              <!-- </div> -->
+            <div *ngIf="profileForm.errors?.missMatch && profileForm.get('passwordRe').dirty && profileForm.get('passwordRe').touched" class="alert alert-danger alter-ego-errors">
+              <!-- <div *ngIf="profileForm.errors?.missMatch"> -->
+                password did not match.Type again...
+              <!-- </div> -->
+            </div>
+          </div>
+
+        </div>
+              
+          <!-- <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>Country:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx" placeholder="Enter Your Country" formControlName="country">
+            
+              <select formControlName="country">
+                <option *ngFor="let country of countries" class="form-control txtbx"  [value]="country">{{country}}</option>
+              </select>
+
+            </div>
+          </div> -->
+          
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>City:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <!-- <input type="Password" class="form-control txtbx" placeholder="Enter Your City" formControlName="city"> -->
+              <select formControlName="city">
+                  <option *ngFor="let country of countries" class="form-control txtbx"  [value]="country">{{country}}</option>
+                </select>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+  
+                <div *ngIf="profileForm.get('city').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                    city is required.
+                </div>
+
+                
+  
+            </div>
+          
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br>Zip Code:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx" placeholder="Enter Your Zip Code" formControlName="countryZipcode">
+            </div>
+          </div>
+
+
+            <div class="row">
+                <!-- <div class="col-3"></div> -->
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+  
+  
+  
+                <div *ngIf="profileForm.get('countryZipcode').errors && (profileForm.get('countryZipcode').dirty || profileForm.get('countryZipcode').touched)|| profileForm.get('countryZipcode').pristine" >
+    
+                  <div *ngIf="profileForm.get('countryZipcode').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger"> 
+                      Zip Code is required.
+                  </div>
+                  <div *ngIf="profileForm.get('countryZipcode').errors?.minlength " class="alert alert-danger" >
+                    Zip Code must be of 4 digits.
+                  </div>
+                  <div *ngIf="profileForm.get('countryZipcode').errors?.maxlength "  class="alert alert-danger">
+                    NID cannot be greater than 4 digits.
+                  </div>
+                  <div *ngIf="profileForm.get('countryZipcode').errors?.pattern "  class="alert alert-danger">
+                      Input digits, letters are not allowed for Zip Code.
+                  </div>
+    
+                </div>
+              </div>
+            </div>
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label>NID:</label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <input type="text" class="form-control txtbx" placeholder="Enter NID" formControlName="ssn" >
+            </div>
+          </div><br><br>
+
+          <div class="row">
+            <!-- <div class="col-3"></div> -->
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+            <div *ngIf="profileForm.get('ssn').errors && (profileForm.get('ssn').dirty || profileForm.get('ssn').touched)|| profileForm.get('ssn').pristine">
+
+              <div *ngIf="profileForm.get('ssn').errors.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                  NID is required.
+              </div>
+              <div *ngIf="profileForm.get('ssn').errors?.minlength " class="alert alert-danger" >
+                NID must be of 10 digits.
+              </div>
+              <div *ngIf="profileForm.get('ssn').errors?.maxlength "  class="alert alert-danger">
+                NID cannot be greater than 10 digits.
+              </div>
+              <div *ngIf="profileForm.get('ssn').errors?.pattern "  class="alert alert-danger">
+                  Input digits, letters are not allowed for NID.
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <div class="checkbox">
+                <label><input type="checkbox" formControlName="agreeBox" >  I Agree with all the terms and conditions.</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+            <!-- <div *ngIf="profileForm.get('agreeBox').errors && (profileForm.get('agreeBox').dirty || profileForm.get('agreeBox').touched)" class="alert alert-danger">
+
+              <div *ngIf="profileForm.get('agreeBox').errors.required ">
+                  Pease read the terms and click on the check-box to agree to our terms.
+              </div>
+            </div> -->
+
+            <div *ngIf="profileForm.get('agreeBox').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger"> 
+              Accept T & C.
+            </div> 
+          </div>
+
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <br><button type="submit" class="btn btn-info"><img src="./assets/img/sign.png" height="8%" width="8%">  Sign Up</button>
+            </div>
+          </div><br>
+          <div class="row" class="col-md-12 col-lg-12 col-sm-12 col-xm-12"> 
+            
+            <div *ngIf="exist"  class="alert alert-danger">
+                email already exist.Please, input another e-mail.
+            </div>
+            
+          </div>
+          </form>
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div><div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <label style="text-align: left;"><br>Sign up with:</label>
+              </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <br><button type="button" class="btn btn-primary"><img src="./assets/img/fb.png" height="8%" width="8%">  Facebook</button>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label><br></label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <br><button type="button" class="btn btn-danger"><img src="./assets/img/gmail.png" height="8%" width="8%">  Google</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

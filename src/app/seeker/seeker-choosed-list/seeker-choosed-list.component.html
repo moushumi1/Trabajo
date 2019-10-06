@@ -1,0 +1,49 @@
+<app-seeker-header></app-seeker-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-seeker-sidebar></app-seeker-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <app-seeker-searchbar></app-seeker-searchbar>
+      </div>
+      <div id="content">
+        <h2>Choosed Provider List</h2>
+        <div class="row" *ngFor="let provider of providers; let i = index" >
+          <div class="col-7" *ngIf="provider.status==false" >
+            <ul >
+              <li>
+                <a (click)="goBooking(i)" >{{provider.to.firstName}}</a>
+                <ul>
+                  <li *ngIf="providers?.length">
+                      Profession:{{ provider.to.profession}}
+                  </li>
+                  <li>Rating: {{provider.to.rating}}</li>
+                </ul>
+              </li>
+          </ul>
+          </div>
+          <div class="col-2" *ngIf="provider.status==false">
+            <button class="btn-pro" (click)="goBooking(i)">Chat  <span class="badge badge-danger badge-pill">1</span></button>
+          </div>
+          <div class="col-1" *ngIf="provider.status==false">
+            <button class="btn-pro"(click)="removeProvider(i)">Remove</button>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul>
+      <li *ngFor="let user of users$">
+        <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+        <ul>
+          <li>{{ user.email }}</li>
+            <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+        </ul>
+      </li>
+    </ul> -->

@@ -1,0 +1,118 @@
+.container-fluid{
+    padding-top: 55px;
+}
+
+.body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.container{
+
+    border: 1px solid lightgrey;
+    width:800px;
+	height:450px;
+	margin:0 auto;
+	margin-top:50px;
+	background-color:#f2f2f2;
+    border-radius:4px;
+    padding: 15px 20px 15px 20px;
+}
+
+h1{
+    text-align: center;
+    color:rgb(8, 0, 0);
+    font-size: 1.30rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    text-decoration: underline;
+}
+
+.chat-form{
+	margin-top: 20px;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-form textarea {
+	background: #fbfbfb;
+	width: 70%;
+	height: 80px;
+	border-radius: 2px solid #eee;
+	border-radius: 3px;
+	resize: none;
+	padding: 10px;
+	font-size: 0.8rem;
+	color: #333;
+}
+
+.chat-form textarea:focus {
+	background: #fff;
+}
+
+.chat-form textarea::-webkit-scrollbar{
+	width: 10px;
+}
+
+.chat-form textarea::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: rgba(0,0,0,.1);
+}
+
+.chat-form .chatbutton{
+	background: #1ddced;
+	padding: 5px 15px;
+	font-size: 1rem;
+	color: #fff;
+	border: none;
+	margin: 0 0px;
+	border-radius: 3px;
+	box-shadow: 0 3px 0 #0eb2c1;
+	cursor: pointer;
+}
+
+.rating{
+	position: absolute;
+	top: 50%;
+	left: 20%;
+	transform: translate(-50%, -50%) rotateY(180deg);
+	display: flex;
+}
+
+.rating input{
+	display: none;
+}
+.rating label{
+	display: block;
+	cursor: pointer;
+	width: 40px;
+}
+.rating label:before{
+	content: '\f005';
+	font-family: fontAwesome;
+	position: relative;;
+	display: block;
+	font-size: 30px;
+	color: #dac5c5;
+}
+
+.rating label:after{
+	content: '\f005';
+	font-family: fontAwesome;
+	position: absolute;
+	display: block;
+	font-size: 30px;
+	color: #F6511D;
+	top: 0;
+	opacity: 0;
+	transition: .5s;
+	text-shadow: 0 2px 5px rgba(0,0,0,.5);
+}
+
+.rating label:hover:after,
+.rating label:hover ~ label:after,
+.rating input:checked ~ label:after{
+	opacity: 1;
+}
+

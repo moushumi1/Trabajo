@@ -1,0 +1,67 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-admin-sidebar></app-admin-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <app-admin-searchbar (sendSearchInfo)=searchResult($event)></app-admin-searchbar>
+      </div> 
+      <div *ngIf="check">
+        <table>  
+          <thead> 
+            <tr>
+              <th>name</th>
+              <th>city</th>
+              <th>profession</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  *ngFor="let user of allUsers |adminsearch: name:city:profession">
+              <td><a routerLink="/admin_user_profile"></a>{{user.firstName}}</td>
+              <td>{{user.city}}</td>
+              <td>{{user.profession}}</td>
+              <td><button class="btn-pro" routerLink="/admin_user_profile">View Profile</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="list">
+      <div id="content">
+        <h2>List of all users</h2>
+        <div class="row" *ngFor="let user of allUsers">
+          <div class="col-8">
+            <ul> 
+              <li>
+                <a routerLink="/admin_user_profile">{{user.firstName}}</a>
+                <ul>
+                  <li *ngIf="user.role.id !=null; else id">User Type: {{user.role.id}}</li>
+                  <ng-template #id>User type: {{user.role}}</ng-template>
+                  <li>User id: {{user.id}}</li>
+                  <li>e-mail: {{user.email}}</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <button class="btn-pro" routerLink="/admin_user_profile">View Profile</button>
+          </div> 
+        </div>    
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul>
+      <li *ngFor="let user of users$">
+        <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+        <ul>
+          <li>{{ user.email }}</li>
+            <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+        </ul>
+      </li>
+    </ul> -->

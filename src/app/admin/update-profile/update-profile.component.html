@@ -1,0 +1,420 @@
+<app-admin-header></app-admin-header>
+ <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+        <div class="sticky-top">
+          <app-admin-sidebar></app-admin-sidebar> 
+        </div>
+    </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <div class="row div1">
+          <div class="col-12">
+            <h1>Update Your Profile</h1>
+          </div>
+        </div>
+
+        <div class="div2">
+          <div class="container form" style="padding-top:20px;">
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>First Name:</label><br>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter First Name" formControlName="firstName">
+              </div>
+            </div><br>
+
+            <div class="row">
+              <!-- <div class="col-3"></div> -->
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+              <div *ngIf="profileForm.get('firstName').errors && (profileForm.get('firstName').dirty || profileForm.get('firstName').touched)|| profileForm.get('firstName').pristine">
+  
+                <div *ngIf="(profileForm.get('firstName').errors?.required && profileForm.get('firstName').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                  First Name is required.
+                </div>
+                <div *ngIf="profileForm.get('firstName').errors?.minlength " class="alert alert-danger" >
+                    firstName must be at least 3 characters long.
+                </div>
+                <div *ngIf="profileForm.get('firstName').errors?.pattern " class="alert alert-danger" >
+                    Cannot contain numbers and symbols.
+                </div>
+  
+              </div>
+            </div>
+          </div>
+
+
+                      
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Last Name:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter Last Name" formControlName="lastName">
+              </div>
+
+
+            </div><br>
+
+            <div class="row">
+              <!-- <div class="col-3"></div> -->
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+              <div *ngIf="profileForm.get('lastName').errors && (profileForm.get('lastName').dirty || profileForm.get('lastName').touched || profileForm.get('lastName').pristine)" >
+  
+                <div *ngIf="(profileForm.get('lastName').errors?.required && profileForm.get('lastName').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                    Last Name is required.
+                </div>
+                <div *ngIf="profileForm.get('lastName').errors?.minlength "class="alert alert-danger" class="alert alert-danger" >
+                    lastName must be at least 3 characters long.
+                </div>
+                <div *ngIf="profileForm.get('lastName').errors?.pattern "class="alert alert-danger"  class="alert alert-danger">
+                    Cannot contain numbers and symbols.
+                </div>
+  
+              </div>
+            </div>
+          </div>
+                      
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>E-Mail:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter Email Address" formControlName="email">
+              </div>
+
+            </div><br>
+
+            <div class="row">
+              <!-- <div class="col-3"></div> -->
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+              <div *ngIf="profileForm.get('email').errors && (profileForm.get('email').dirty || profileForm.get('email').touched)" >
+  
+                <div *ngIf="(profileForm.get('email').errors?.required && profileForm.get('email').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                    e-mail is required.
+                </div>
+                <div *ngIf="profileForm.get('email').errors?.pattern"  class="alert alert-danger">
+                    incorrect format of e-mail.
+                </div>
+  
+              </div>
+            </div>
+          </div>
+                      
+          <div class="row">
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+              <label>Gender: </label>
+            </div>
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="gender" formControlName="gender" value="male">
+                <label class="form-check-label" for="materialChecked">Male</label>
+              </div>
+            
+              <div class="form-check">
+                <input type="radio" class="form-check-input"  name="gender" formControlName="gender" value="female" >
+                <label class="form-check-label" for="materialChecked">Female</label>
+              </div>
+
+              <!-- <div class="form-check">
+                <input type="radio" class="form-check-input" id="materialChecked" name="materialExampleRadios" checked>
+                <label class="form-check-label" for="materialChecked">Other</label>
+              </div>             -->
+            </div>
+          </div><br>
+
+         <div class="row">
+            
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+            
+
+              <div *ngIf="(profileForm.get('gender').errors && profileForm.get('gender').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                Gender is required.
+              </div>
+
+
+            
+          </div>
+        </div> 
+
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+            <label>Contact No:</label>
+          </div>
+          <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+            <input type="text" class="form-control txtbx" placeholder="Enter Contact Number" formControlName="contactNo">
+          </div>
+        </div><br>
+
+        
+        <div class="row">
+          <!-- <div class="col-3"></div> -->
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+          <div *ngIf="profileForm.get('contactNo').errors && (profileForm.get('contactNo').dirty || profileForm.get('contactNo').touched || profileForm.get('contactNo').pristine)" >
+
+            <div *ngIf="(profileForm.get('contactNo').errors?.required && profileForm.get('contactNo').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+              Contact is required.
+            </div>
+             <!-- <div *ngIf="profileForm.get('contact').errors?.minlength "class="alert alert-danger"  >
+              The length of the contact is incorrect.
+            </div> -->
+            <div *ngIf="profileForm.get('contactNo').errors?.pattern "class="alert alert-danger"  >
+                Contact format is not correct.
+            </div> 
+
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+          <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+            <label>Date of Birth:</label>
+          </div>
+          <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+            <input type="date" class="form-control txtbx" placeholder="Enter Birth Date" formControlName="dob">
+          </div>
+        </div><br>
+
+        <div class="cross-validation" [class.cross-validation-error]="profileForm.errors?.dateInvalid && (profileForm.touched || profileForm.dirty)">
+        <div class="row">
+          <!-- <div class="col-3"></div> -->
+          <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+          <div *ngIf="profileForm.get('dob').errors && (profileForm.get('dob').dirty || profileForm.get('dob').touched || profileForm.get('dob').pristine)" >
+
+            <div *ngIf="(profileForm.get('dob').errors?.required && profileForm.get('dob').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+              Date of Birth is required.
+            </div>
+             <!-- <div *ngIf="profileForm.get('contact').errors?.minlength "class="alert alert-danger"  >
+              The length of the contact is incorrect.
+            </div> -->
+            <div *ngIf="(profileForm.errors?.dateInvalid && profileForm.get('dob').touched)" class="alert alert-danger">
+                Date of Birth is not correct.
+            </div> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Profession:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter Your Profession" formControlName="profession">
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Interest:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Separeted by comma. (ex: driving, cooking)" formControlName="interest">
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Experience:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter your job/practical Experience" formControlName="experince">
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Price Rate:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="Number" class="form-control txtbx" placeholder="Enter Your Price Rate (Per hour)"formControlName="priceRate">
+              </div>
+            </div><br>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Address:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter Address" formControlName="address">
+              </div>
+            </div><br>
+                          
+            <!-- <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Country:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <input type="text" class="form-control txtbx" placeholder="Enter Country">
+              </div>
+            </div><br> -->
+
+            <div class="row">
+              <!-- <div class="col-3"></div> -->
+              <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+
+
+
+              <div *ngIf="profileForm.get('address').errors && (profileForm.get('address').dirty || profileForm.get('address').touched || profileForm.get('address').pristine)" >
+  
+                <div *ngIf="(profileForm.get('address').errors?.required && profileForm.get('address').touched) || (isValidFormSubmitted != null && !isValidFormSubmitted)" class="alert alert-danger">
+                  address is required.
+                </div>
+                <!-- <div *ngIf="profileForm.get('address').errors?.minlength "class="alert alert-danger" class="alert alert-danger" >
+                  address must be at least 3 characters long.
+                </div>
+                <div *ngIf="profileForm.get('address').errors?.pattern "class="alert alert-danger"  class="alert alert-danger">
+                    Cannot contain numbers and symbols.
+                </div> -->
+  
+              </div>
+            </div>
+          </div>
+                      
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br>City:</label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <!-- <input type="Password" class="form-control txtbx" placeholder="Enter Your City" formControlName="city"> -->
+                <select formControlName="city">
+                    <option *ngFor="let country of countries" class="form-control txtbx"  [value]="country">{{country}}</option>
+                  </select>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+  
+    
+                  <div *ngIf="profileForm.get('city').invalid && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                      city is required.
+                  </div>
+  
+                  
+    
+              </div>
+            </div>
+                      
+              <div class="row">
+                <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                  <label><br>Zip Code:</label>
+                </div>
+                <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                  <input type="text" class="form-control txtbx" placeholder="Enter Your Zip Code" formControlName="countryZipcode">
+                </div>
+              </div>
+    
+    
+                <div class="row">
+                    <!-- <div class="col-3"></div> -->
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+      
+      
+      
+                    <div *ngIf="profileForm.get('countryZipcode').errors && (profileForm.get('countryZipcode').dirty || profileForm.get('countryZipcode').touched)|| profileForm.get('countryZipcode').pristine" >
+        
+                      <div *ngIf="profileForm.get('countryZipcode').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger"> 
+                          Zip Code is required.
+                      </div>
+                      <div *ngIf="profileForm.get('countryZipcode').errors?.minlength " class="alert alert-danger" >
+                        Zip Code must be of 4 digits.
+                      </div>
+                      <div *ngIf="profileForm.get('countryZipcode').errors?.maxlength "  class="alert alert-danger">
+                        NID cannot be greater than 4 digits.
+                      </div>
+                      <div *ngIf="profileForm.get('countryZipcode').errors?.pattern "  class="alert alert-danger">
+                          Input digits, letters are not allowed for Zip Code.
+                      </div>
+        
+                    </div>
+                  </div>
+                </div><br>
+            
+                <div class="row">
+                  <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                    <label>NID:</label>
+                  </div>
+                  <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                    <input type="text" class="form-control txtbx" placeholder="Enter SSN" formControlName="ssn" >
+                  </div>
+                </div><br><br>
+      
+                <div class="row">
+                  <!-- <div class="col-3"></div> -->
+                  <div class="col-md-12 col-lg-12 col-sm-12 col-xm-12">
+      
+      
+      
+                  <div *ngIf="profileForm.get('ssn').errors && (profileForm.get('ssn').dirty || profileForm.get('ssn').touched)|| profileForm.get('ssn').pristine">
+      
+                    <div *ngIf="profileForm.get('ssn').errors?.required && isValidFormSubmitted != null && !isValidFormSubmitted" class="alert alert-danger">
+                        NID is required.
+                    </div>
+                    <div *ngIf="profileForm.get('ssn').errors?.minlength " class="alert alert-danger" >
+                      NID must be of 10 digits.
+                    </div>
+                    <div *ngIf="profileForm.get('ssn').errors?.maxlength "  class="alert alert-danger">
+                      NID cannot be greater than 10 digits.
+                    </div>
+                    <div *ngIf="profileForm.get('ssn').errors?.pattern "  class="alert alert-danger">
+                        Input digits, letters are not allowed for NID.
+                    </div>
+      
+                  </div>
+                </div>
+              </div><br><br>
+
+            <div class="row">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label>Update Image :</label>
+              </div>
+              <form class="md-form">
+                <div class="file-field">
+                    <div class="btn btn-sm float-left">
+                        <input type="file">
+                    </div>
+                </div>
+            </form>
+            </div><br><br>
+            
+            <div class="row" style="padding-bottom: 10vh;">
+              <div class="col-md-3 col-lg-3 col-sm-12 col-xm-12">
+                <label><br></label>
+              </div>
+              <div class="col-md-9 col-lg-9 col-sm-12 col-xm-12">
+                <br><button type="submit" class="btn btn-info"><img src="./assets/img/sign.png" height="8%" width="8%">  Update Profile</button>
+              </div>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>
+

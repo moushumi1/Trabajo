@@ -1,0 +1,48 @@
+<app-admin-header></app-admin-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-admin-sidebar></app-admin-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <app-admin-searchbar></app-admin-searchbar>
+      </div>
+      <div id="content">
+        <h2>Service Seeker</h2>
+        <div class="row" *ngFor="let seeker of seekers">
+          <div class="col-8">
+              <ul>
+                  <li>
+                    <a routerLink="/admin_user_profile">{{seeker.firstName}}</a>
+                    <ul>
+                      <li>User Type: {{seeker.role.id}}</li>
+                      <li>User id: {{seeker.id}}</li>
+                      <li>e-mail: {{seeker.email}}</li>
+                    </ul>
+                  </li>
+                </ul>
+          </div>
+          <div class="col-2">
+            <button class="btn-pro" routerLink="/admin_user_profile">View Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <ul>
+  <li *ngFor="let user of users$">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+    <ul>
+      <li>{{ user.email }}</li>
+      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+    </ul>
+  </li>
+</ul> -->
+
+

@@ -1,0 +1,160 @@
+<app-pro-header></app-pro-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top" >
+        <app-pro-sidebar></app-pro-sidebar>
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div class="container"> 
+        <div class="row">
+          <div class="col-md-6"><br>
+            <span class="label rounded-left" style="padding:15px;">Profile of {{userInfo.firstName}} {{userInfo.lastName}}</span>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-2 proImg">
+            <img src="assets/img/demo.jpg" width="100%" height="70%"><br><br>
+            <div class="row">
+              <div class="col-12">
+                <h5>{{userInfo.firstName}}</h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 basic_info">
+            <h4>Basic Information:</h4><hr>
+            <div class="row">
+              <div class="col-md-5">
+                <p>Age:</p>
+              </div>
+              <div class="col-md-6">
+                <p>25</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5">
+                <p>Gender:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{userInfo.gender}}</p>
+              </div>
+            </div>
+                
+            <div class="row">
+              <div class="col-md-5">
+                <p>SSN:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{userInfo.ssn}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 contact">
+              <h4>Contact Information:</h4><hr>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>E-mail:</p>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userInfo.email}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Contact no:</p>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userInfo.contactNo}}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Address:</p>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userInfo.address}}</p>
+                </div>
+              </div>       
+            </div>
+          <div class="col-md-2">
+            <!-- blank -->
+          </div>
+        </div>
+
+
+        <div class="row" style="padding-top:20px; padding-left:25px;">
+            <div class="col-2"></div>
+            <div class="col-md-8 prof">
+              <h4>Profession and Interest:</h4><hr>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Profession:</p>
+                </div>
+                <div class="col-md-6">
+                  {{userInfo.profession}}.
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <p>Interest:</p>
+                </div>
+                <div class="col-md-6">
+                  <p>{{userInfo.interest}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2">
+                <!-- blank -->
+            </div>
+          </div>
+
+
+
+
+        <div class="row" style="padding-top:20px; padding-left:25px;">
+          <div class="col-2"></div>
+          <div class="col-md-8 add">
+            <h4>Additional Information:</h4><hr>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Date of Birth:</p>
+              </div>
+              <div class="col-md-6">
+                {{userInfo.dob | date:'dd/MM/yyyy'}}
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <p>Zip code:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{userInfo.countryZipcode}}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <p>City:</p>
+              </div>
+              <div class="col-md-6">
+                <p>{{userInfo.city}}</p>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-4">
+                <p>Country:</p>
+              </div>
+              <div class="col-md-6">
+                <p>Bangladesh</p>
+              </div>
+            </div> -->
+          </div>
+          <div class="col-md-2">
+            <!-- blank -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

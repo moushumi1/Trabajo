@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-clr">
+      <a class="navbar-brand" routerLink="/seeker_home">Home</a>
+      <ul class="navbar-nav mx-auto order-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home"><img src="assets/img/navlogoo.png"></a>
+        </li>
+      </ul>
+      <div class="dropdown ml-auto">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{userInfo.firstName}} {{userInfo.lastName}}</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="float:left;">
+          <a class="dropdown-item drpclr" routerLink="/seeker_view_profile">View Profile</a>
+          <a class="dropdown-item drpclr" routerLink="/seeker_update_profile">Update profile</a>
+          <a class="dropdown-item drpclr" routerLink="#">Setting</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item drpclr" routerLink="#">Log out</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

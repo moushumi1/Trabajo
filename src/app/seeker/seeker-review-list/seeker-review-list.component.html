@@ -1,0 +1,43 @@
+<app-seeker-header></app-seeker-header>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2 col-lg-2 col-xl-2 col-sm-12 col-12">
+      <div class="sticky-top">
+        <app-seeker-sidebar></app-seeker-sidebar> 
+      </div>
+    </div>
+    <div class="col-md-10 col-lg-10 col-xl-10 col-sm-12 col-12 body">
+      <div>
+        <app-seeker-searchbar></app-seeker-searchbar>
+      </div>
+      <div id="content">
+        <h2>Review Your Provider</h2>
+        <div class="row" *ngFor="let provider of providers; let i = index">
+          <div class="col-8">
+            <ul>
+              <li>
+                <a (click)="goReview(i)" >{{provider.to.firstName}} {{provider.to.lastName}}</a>
+                  <ul>
+                    <li>Profession: {{provider.to.profession}}</li>
+                  </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="col-1">
+            <button class="btn-pro" (click)="goReview(i)">Review</button>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul>
+      <li *ngFor="let user of users$">
+        <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+        <ul>
+          <li>{{ user.email }}</li>
+            <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+        </ul>
+      </li>
+    </ul> -->

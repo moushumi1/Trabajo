@@ -1,0 +1,91 @@
+.container-fluid{
+    padding-top: 55px;
+}
+
+.body{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.btn-pro{
+    color: #fff;
+    margin: 0 2px;
+    border-radius: 5px;
+    background-color: #17a0b6;
+	cursor: pointer;
+    text-align: right;
+    cursor: pointer;
+}
+
+
+.tranbox {
+	width: 800wh;
+	min-width: 390px;
+	height: 510px;
+	background: rgb(252, 240, 240);
+	padding: 25px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.tranlogs {
+	padding: 10px;
+	width: 100wh;
+	height: 380px;
+	background: #ececec;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border-radius: 10px;
+}
+
+.tranlogs::-webkit-scrollbar{
+	width: 10px;
+}
+
+.tranlogs::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: rgba(0,0,0,.1);
+}
+
+#trantable {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+#trantable td, #trantable th {
+    border: 1px solid #ddd;
+    padding: 5px 2px;
+}
+
+#trantable tr:nth-child(even){background-color: #f2f2f2;}
+
+#trantable tr:hover {background-color: #ddd;}
+
+#trantable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #17a0b6;
+    color: white;
+}
+
+
+.graphbox {
+	width: 800wh;
+	min-width: 390px;
+	height: 750px;
+	background: rgb(252, 240, 240);
+	padding: 25px;
+    margin: 35px;
+	border-radius: 10px;
+}
+
+.graphlogs {
+	padding: 10px;
+	width: 75vw;
+	height: 670px;
+	background: #ececec;
+	border-radius: 10px;
+
+}

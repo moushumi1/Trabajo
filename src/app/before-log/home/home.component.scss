@@ -1,0 +1,365 @@
+//animated button
+a.animated-button:link:after, a.animated-button:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover, a.animated-button:visited:hover {
+	color: #FFF;
+	text-shadow: none;
+}
+a.animated-button:link:hover:after, a.animated-button:visited:hover:after {
+	height: 450%;
+}
+a.animated-button:link, a.animated-button:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #F6511D;
+	font-size:1.7vh;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+
+a.animated-button.victoria-three {
+	border: 2px solid #F6511D;
+}
+
+a.animated-button.victoria-three:after {
+	background: #F6511D;
+	opacity: .5;
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+a.animated-button.victoria-three:hover:after {
+	height: 140%;
+	opacity: 1;
+}
+//animated button
+
+
+
+.body{
+  font-family: Georgia;
+}
+.textDiv{
+    height: 45vh;
+    padding-left: 35px;
+}
+
+h1{
+  padding-top: 80px;
+  font-size: 3.3rem;
+}
+
+.feature{
+    height: 40vh;
+    padding-left: 35px;
+    margin-top: 20px;
+    // padding-bottom: 50px;
+}
+.provider{
+    height: 20vh;
+    padding-right: 3px;
+}
+.seeker{
+    height: 20vh;
+    margin-right: 3px;
+}
+.shad{
+    box-shadow: 1px 2px 2px 2px #888888;
+    
+}
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.container1 {
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.container1 img{
+opacity: 0.5;
+
+}
+
+
+
+* {
+    margin: 0; 
+	  padding: 0;
+}
+
+/*catagory slider*/
+.accordian {
+	width: 805px; height: 320px;
+	overflow: hidden;
+	
+	/*Time for some styling*/
+	/*margin: 100px auto;*/
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 1200px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 160px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+
+/*quote*/
+
+.quote{
+  background-color: #fff;
+  padding-bottom: 35px;
+  padding: 70px 0px;
+  margin:0;
+
+}
+.catagory{
+  background-color: #2B2D42;
+  padding: 70px 0px;
+  
+  margin:0;
+
+  
+}
+
+#quote-carousel ,#quote-provider 
+{
+  padding: 0 10px 30px 10px;
+  margin-top: 30px;
+}
+
+
+/* Previous button  */
+#quote-carousel .carousel-control-prev ,#quote-provider .carousel-control-prev 
+{
+  left: -12px;
+  bottom: 40%;
+  margin-top: 30px;
+}
+/* Next button  */
+#quote-carousel .carousel-control-next,#quote-provider .carousel-control-next
+{
+  right: -12px !important;
+  bottom: 40%;
+  margin-top: 30px;
+}
+/* Changes the position of the indicators */
+#quote-carousel .carousel-indicators ,#quote-provider .carousel-indicators
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+  padding-left: 40%;
+}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li ,#quote-provider .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+#quote-carousel .carousel-indicators .active ,#quote-provider .carousel-indicators .active 
+{
+  background: #333333;
+}
+#quote-carousel img,#quote-provider img
+{
+  width: 250px;
+  height: 100px
+}
+/* End carousel */
+
+.item blockquote {
+    border-left: none; 
+    margin: 0;
+}
+
+.item blockquote img {
+    margin-bottom: 10px;
+}
+
+.item blockquote p:before {
+    content: "\f10d";
+    font-family: 'Fontawesome';
+    float: left;
+    margin-right: 10px;
+}
+
+
+
+/**
+  MEDIA QUERIES
+*/
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+    #quote-carousel 
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+
+        #quote-provider 
+    {
+      margin-bottom: 0;
+      padding: 0 40px 30px 40px;
+    }
+    
+}
+
+/* Small devices (tablets, up to 768px) */
+@media (max-width: 768px) { 
+    
+    /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+    
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;  
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+     #quote-provider .carousel-indicators {
+        bottom: -20px !important;  
+    }
+    #quote-provider .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-provider .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/*footer*/
+
+.footer_end{
+  background-color: #181924;
+  padding: 50px 0px;
+  color: white;
+  
+}
+
+
+.mc{
+    font-size:30px;
+    margin: 0px 10px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+ 
+  
+.fa-facebook:hover {  
+    color:#3B5998;
+}
+.fa-twitter:hover{ 
+    color:#00C6FF;
+}
+.fa-google-plus:hover{ 
+    color: #DB4437;
+}
+.fa-linkedin:hover{
+    color:#0077B5;
+}
+.fa-instagram:hover{ 
+    color:#458eff;
+}
+
+.footer_bottom{
+  color: white;
+}
+

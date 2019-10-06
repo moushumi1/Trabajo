@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-12">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <form class="form-inline" action="">
+        <h5>Search: </h5>
+        <input class="form-control mr-sm-2" type="text" placeholder="User id" size="10">
+        <input #inputName class="form-control mr-sm-2" type="text" placeholder="Name" size="10">
+        <div class="input-group" style="padding-right:8px;">
+          <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="User Type" size="8">
+          <div class="input-group-append">
+            <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" size="8"></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">Seeker</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">Provider</a>
+            </div>
+          </div>
+        </div>
+        <div class="input-group" style="padding-right:8px;">
+          <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Gender" size="8">
+          <div class="input-group-append">
+            <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" size="8"></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">Male</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">Female</a>
+            </div>
+          </div>
+        </div>
+        <input #inputProfession class="form-control mr-sm-2" type="text" placeholder="Profession" size="10">
+        <input #inputCity class="form-control mr-sm-2" type="text" placeholder="City" size="10">
+        <div class="input-group" style="padding-right:8px;">
+          <input type="text" class="form-control" aria-label="Text input with dropdown button" placeholder="Rating" size="10">
+          <div class="input-group-append">
+            <button class="btn btn-outline-info dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" size="8"></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item">1</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">2</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">3</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">4</a>
+              <div role="separator" class="dropdown-divider"></div>
+              <a class="dropdown-item">5</a>
+            </div>
+          </div>
+        </div>
+        <button class="searchButton" (click)="collectInfo(inputName.value,inputCity.value,inputProfession.value)">search</button>
+      </form>
+    </nav>
+  </div>
+</div>
